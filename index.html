@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sri Ramakrishna Ayurvedic Hospital Kundapura, Karnataka - Specialized Ayurvedic Treatments for Pain Management, Stroke Rehabilitation, Panchakarma & Chronic Health Conditions.">
+    <meta name="keywords" content="Ayurveda, Hospital, Kundapura, Udupi, Panchakarma, Stroke Rehab, Pain Management, Doctor Consultation">
+    <title>Sri Ramakrishna Ayurvedic Hospital | Kundapura, Karnataka</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Announcement & Contact Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-info">
+                <span><i class="fas fa-map-marker-alt"></i> Shastri Circle, Court Road, Kundapura - 576201</span>
+                <span><i class="fas fa-phone-alt"></i> <a href="tel:+919480855959">+91 94808 55959</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:info@srkayurveda.com">info@srkayurveda.com</a></span>
+            </div>
+            <div class="top-social">
+                <span>Follow Us:</span>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="navbar">
+        <div class="container header-container">
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" class="lotus-svg">
+                        <path d="M50 15 C55 35 75 40 85 55 C70 60 55 50 50 75 C45 50 30 60 15 55 C25 40 45 35 50 15 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M50 30 C58 45 78 50 82 62 C70 65 58 55 50 80 C42 55 30 65 18 62 C22 50 42 45 50 30 Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="hospital-name">SRI RAMAKRISHNA</span>
+                    <span class="hospital-subtitle">AYURVEDIC HOSPITAL</span>
+                    <span class="hospital-location">KUNDAPURA, KARNATAKA</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#treatments" class="nav-link">Treatments <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#treatments" onclick="selectTreatment('Pain Management')">Pain Management</a></li>
+                            <li><a href="#treatments" onclick="selectTreatment('Stroke Rehabilitation')">Stroke Rehabilitation</a></li>
+                            <li><a href="#treatments" onclick="selectTreatment('Panchakarma')">Panchakarma Detox</a></li>
+                            <li><a href="#treatments" onclick="selectTreatment('Neurological Disorders')">Neurological Disorders</a></li>
+                            <li><a href="#treatments" onclick="selectTreatment('Musculoskeletal Care')">Musculoskeletal Care</a></li>
+                            <li><a href="#treatments" onclick="selectTreatment('Lifestyle Disorders')">Lifestyle Disorders</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                    <li><a href="#packages" class="nav-link">Packages</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-whatsapp header-cta" onclick="openBookingModal()">
+                    <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-background-pattern"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-headline-wrapper">
+                    <h1 class="hero-title">Heal Naturally.<br><span class="hero-subtitle-green">Live Better.</span></h1>
+                </div>
+                
+                <p class="hero-description">
+                    Specialized Ayurvedic Treatments for <strong>Pain Management</strong>, <strong>Stroke Rehabilitation</strong>, <strong>Panchakarma</strong> & <strong>Chronic Health Conditions</strong>.
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="btn btn-primary btn-large btn-whatsapp-hero" onclick="openBookingModal()">
+                        <i class="fab fa-whatsapp"></i> Book Appointment on WhatsApp
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="openVideoModal('hospital-intro', 'Sri Ramakrishna Ayurvedic Hospital Overview', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                        <i class="fas fa-play-circle"></i> Watch Our Video
+                    </button>
+                </div>
+
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i> Kundapura, Udupi District, Karnataka
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="image-frame-border">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80" alt="Sri Ramakrishna Ayurvedic Hospital Building" class="hero-img">
+                    <div class="image-overlay-gradient"></div>
+                    <div class="hospital-name-tag">
+                        <i class="fas fa-hospital-alt"></i>
+                        <span>SRI RAMAKRISHNA AYURVEDIC HOSPITAL</span>
+                    </div>
+                </div>
+                <div class="leaf-decoration leaf-top-right"></div>
+                <div class="leaf-decoration leaf-bottom-left"></div>
+            </div>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="trust-badges-bar">
+            <div class="container trust-container">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-number">20+</span>
+                        <span class="trust-label">Years of Ayurvedic Excellence</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-title">Experienced</span>
+                        <span class="trust-label">Ayurvedic Doctors</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-title">Personalized</span>
+                        <span class="trust-label">Treatment Plans</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-title">Holistic</span>
+                        <span class="trust-label">Healing Approach</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-title">Thousands of</span>
+                        <span class="trust-label">Patients Treated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Treatments Section -->
+    <section class="section treatments-section" id="treatments">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-leaf-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="section-title">Our Specialized Treatments</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="treatments-carousel-wrapper">
+                <button class="carousel-nav prev-btn" id="treatmentsPrev" aria-label="Previous treatment">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="treatments-grid" id="treatmentsGrid">
+                    <!-- Treatment Card 1 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3 class="treatment-title">Pain Management</h3>
+                        <p class="treatment-desc">Back Pain, Neck Pain, Sciatica, Arthritis, Joint Pain</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Pain Management')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Treatment Card 2 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h3 class="treatment-title">Stroke Rehabilitation</h3>
+                        <p class="treatment-desc">Recovery programs focused on mobility and independence</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Stroke Rehabilitation')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Treatment Card 3 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                        <h3 class="treatment-title">Panchakarma</h3>
+                        <p class="treatment-desc">Detoxification and rejuvenation therapies</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Panchakarma')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Treatment Card 4 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="treatment-title">Neurological Disorders</h3>
+                        <p class="treatment-desc">Nerve-related conditions and rehabilitation</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Neurological Disorders')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Treatment Card 5 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 class="treatment-title">Musculoskeletal Care</h3>
+                        <p class="treatment-desc">Spine, joints and mobility treatments</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Musculoskeletal Care')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Treatment Card 6 -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon-wrapper">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="treatment-title">Lifestyle Disorders</h3>
+                        <p class="treatment-desc">Stress, obesity and chronic disease management</p>
+                        <button class="btn-text-link" onclick="openTreatmentModal('Lifestyle Disorders')">Know More <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <button class="carousel-nav next-btn" id="treatmentsNext" aria-label="Next treatment">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Doctors Section -->
+    <section class="section doctors-section" id="doctors">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-leaf-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="section-title">Meet Our Doctors</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="doctors-grid">
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-photo-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. P. Krishna Rao" class="doctor-img">
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. P. Krishna Rao</h3>
+                        <span class="doctor-degree">B.A.M.S, M.D (Ayu)</span>
+                        <p class="doctor-specialty">Chief Physician & Founder</p>
+                        <div class="doctor-exp-badge">25+ Years Experience</div>
+                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. P. Krishna Rao')">
+                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-photo-wrapper">
+                        <img src="https://images.unsplash.com/photo-1594824813566-88855ce78907?auto=format&fit=crop&w=600&q=80" alt="Dr. Rashmi K. Rao" class="doctor-img">
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Rashmi K. Rao</h3>
+                        <span class="doctor-degree">B.A.M.S, M.D (Ayu)</span>
+                        <p class="doctor-specialty">Panchakarma & Women's Health</p>
+                        <div class="doctor-exp-badge">20+ Years Experience</div>
+                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Rashmi K. Rao')">
+                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-photo-wrapper">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Dr. Sharath B. Rao" class="doctor-img">
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Sharath B. Rao</h3>
+                        <span class="doctor-degree">B.A.M.S, M.D (Ayu)</span>
+                        <p class="doctor-specialty">Pain Management & Rehabilitation</p>
+                        <div class="doctor-exp-badge">15+ Years Experience</div>
+                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Sharath B. Rao')">
+                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 4 -->
+                <div class="doctor-card">
+                    <div class="doctor-photo-wrapper">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Dr. Prasanna Shetty" class="doctor-img">
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. Prasanna Shetty</h3>
+                        <span class="doctor-degree">B.A.M.S, M.D (Ayu)</span>
+                        <p class="doctor-specialty">Neurology & Panchakarma</p>
+                        <div class="doctor-exp-badge">12+ Years Experience</div>
+                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Prasanna Shetty')">
+                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Patients Choose Banner -->
+    <section class="why-choose-banner" id="about">
+        <div class="container">
+            <h2 class="why-title">Why Patients Choose Sri Ramakrishna Hospital</h2>
+            
+            <div class="why-pillars-grid">
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <span class="pillar-label">Authentic Ayurveda</span>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <span class="pillar-label">Experienced Doctors</span>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <span class="pillar-label">Personalized Treatment Plans</span>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <span class="pillar-label">Compassionate Care</span>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="pillar-label">Proven Recovery Programs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Recovery Stories (Testimonials) -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-leaf-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="section-title">Patient Recovery Stories</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <button class="carousel-nav prev-btn" id="testimonialsPrev" aria-label="Previous story">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    <!-- Story 1 -->
+                    <div class="story-card">
+                        <div class="story-photo-box">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Mr. Shekhar" class="story-img">
+                            <button class="play-overlay-btn" onclick="openVideoModal('stroke-recovery', 'Stroke Recovery Story - Mr. Shekhar', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" aria-label="Play video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-category">Stroke Recovery</h3>
+                            <p class="story-patient">Mr. Shekhar</p>
+                            <p class="story-quote">Regained mobility and independence with Ayurvedic treatment</p>
+                            <button class="watch-video-btn" onclick="openVideoModal('stroke-recovery', 'Stroke Recovery Story - Mr. Shekhar', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                                Watch Video <i class="far fa-play-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="story-card">
+                        <div class="story-photo-box">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Mrs. Geetha" class="story-img">
+                            <button class="play-overlay-btn" onclick="openVideoModal('knee-pain-relief', 'Knee Pain Relief Story - Mrs. Geetha', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" aria-label="Play video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-category">Knee Pain Relief</h3>
+                            <p class="story-patient">Mrs. Geetha</p>
+                            <p class="story-quote">Freedom from knee pain and able to walk comfortably</p>
+                            <button class="watch-video-btn" onclick="openVideoModal('knee-pain-relief', 'Knee Pain Relief Story - Mrs. Geetha', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                                Watch Video <i class="far fa-play-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="story-card">
+                        <div class="story-photo-box">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Mr. Ramesh" class="story-img">
+                            <button class="play-overlay-btn" onclick="openVideoModal('back-pain-recovery', 'Back Pain Recovery Story - Mr. Ramesh', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" aria-label="Play video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-category">Back Pain Recovery</h3>
+                            <p class="story-patient">Mr. Ramesh</p>
+                            <p class="story-quote">Chronic back pain recovered without surgery</p>
+                            <button class="watch-video-btn" onclick="openVideoModal('back-pain-recovery', 'Back Pain Recovery Story - Mr. Ramesh', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                                Watch Video <i class="far fa-play-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-nav next-btn" id="testimonialsNext" aria-label="Next story">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Treatment Packages Section -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-leaf-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="section-title">Our Treatment Packages</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="package-name">Pain Relief Package</h3>
+                        <p class="package-for">For Back Pain, Neck Pain, Sciatica, Joint Pain</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-duration">7 – 14 Days</div>
+                        <div class="package-pricing">
+                            <span class="old-price">₹35,000</span>
+                            <span class="new-price">₹10,000</span>
+                        </div>
+                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Pain Relief Package')">
+                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card featured">
+                    <div class="package-badge">Popular</div>
+                    <div class="package-header">
+                        <div class="package-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="package-name">Stroke Rehabilitation Package</h3>
+                        <p class="package-for">Complete rehab program for better recovery & independence</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-duration">14 – 28 Days</div>
+                        <div class="package-pricing">
+                            <span class="old-price">₹60,000</span>
+                            <span class="new-price">₹20,000</span>
+                        </div>
+                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Stroke Rehabilitation Package')">
+                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-icon">
+                            <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                        <h3 class="package-name">Panchakarma Detox Package</h3>
+                        <p class="package-for">Detoxify, Rejuvenate & Recharge your body</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-duration">7 – 14 Days</div>
+                        <div class="package-pricing">
+                            <span class="old-price">₹30,000</span>
+                            <span class="new-price">₹12,000</span>
+                        </div>
+                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Panchakarma Detox Package')">
+                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="package-name">Lifestyle Wellness Package</h3>
+                        <p class="package-for">For Stress, Obesity, Diabetes, Thyroid & more</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-duration">14 – 21 Days</div>
+                        <div class="package-pricing">
+                            <span class="old-price">₹40,000</span>
+                            <span class="new-price">₹15,000</span>
+                        </div>
+                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Lifestyle Wellness Package')">
+                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="packages-note">
+                Packages can be customized based on individual conditions. *Consultation required.
+            </p>
+        </div>
+    </section>
+
+    <!-- Hospital Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-leaf-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="section-title">Hospital Gallery</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80" alt="Hospital Entrance" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Hospital Campus</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Doctor Consultation" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Doctor Consultation</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1608248597369-094191c49122?auto=format&fit=crop&w=800&q=80" alt="Ayurvedic Oils" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Ayurvedic Herbs & Oils</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Therapy Room" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Therapy Suite</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Panchakarma Treatment" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Panchakarma Session</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Rehabilitation Facility" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Stroke Rehab Center</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-action">
+                <button class="btn btn-outline btn-gallery-more" onclick="openLightbox(0)">
+                    View More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ, Help CTA & Map Section -->
+    <section class="section faq-contact-section" id="contact">
+        <div class="container">
+            <div class="faq-contact-grid">
+                <!-- Column 1: FAQ Accordion -->
+                <div class="faq-column">
+                    <h3 class="widget-title">Frequently Asked Questions</h3>
+                    <div class="faq-accordion" id="faqAccordion">
+                        <div class="faq-item active">
+                            <button class="faq-question">
+                                <span>Is Ayurveda effective for chronic pain?</span>
+                                <i class="fas fa-plus faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, authentic Ayurveda addresses the root cause of chronic pain through specialized therapies like Abhyanga, Kati Vasti, Elakizhi, and targeted herbal medicines that reduce inflammation and restore natural joint mobility.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How many days does treatment take?</span>
+                                <i class="fas fa-plus faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Treatment duration varies depending on the medical condition. Typically, specialized packages range from 7 to 28 days for optimal therapeutic recovery and detox results.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do I need prior appointments?</span>
+                                <i class="fas fa-plus faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Prior booking is highly recommended to ensure doctor availability and customized treatment preparation. You can instantly book via WhatsApp or by calling our desk.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can stroke patients benefit from Ayurveda?</span>
+                                <i class="fas fa-plus faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, our specialized Stroke Rehabilitation program combines neuro-restorative Ayurvedic therapies, herbal tonics, and physical therapy to aid motor recovery, speech restoration, and muscle strengthening.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is accommodation available?</span>
+                                <i class="fas fa-plus faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, Sri Ramakrishna Ayurvedic Hospital provides serene, clean, and comfortable inpatient accommodation options complete with Ayurvedic dietary support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: We're Here to Help You Box -->
+                <div class="help-box-column">
+                    <div class="help-box">
+                        <div class="help-box-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="help-title">We're Here to Help You</h3>
+                        <p class="help-desc">Book your consultation on WhatsApp and take the first step towards healing.</p>
+                        <button class="btn btn-whatsapp-hero help-btn" onclick="openBookingModal()">
+                            <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                        </button>
+                        <div class="help-call-direct">
+                            <i class="fas fa-phone-alt"></i> Call Us: <a href="tel:+919480855959">+91 94808 55959</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Visit Info & Location Map -->
+                <div class="visit-column">
+                    <h3 class="widget-title">Visit Sri Ramakrishna Ayurvedic Hospital</h3>
+                    <div class="hospital-address-card">
+                        <div class="address-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Shastri Circle, Court Road<br>Kundapura – 576201<br>Udupi District, Karnataka</p>
+                        </div>
+                        <div class="address-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>+91 94808 55959<br>+91 94808 226655</p>
+                        </div>
+                        <div class="address-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@srkayurveda.com</p>
+                        </div>
+                        <div class="address-item">
+                            <i class="fas fa-globe"></i>
+                            <p>www.srkayurveda.com</p>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe title="Hospital Map Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15516.486714088924!2d74.6852!3d13.6265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc045b1416e919%3A0xc3b83984d4360e22!2sKundapura%2C%20Karnataka%20576201!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-brand-col">
+                <a href="#home" class="footer-logo">
+                    <div class="logo-icon-sm">
+                        <svg viewBox="0 0 100 100" class="lotus-svg">
+                            <path d="M50 30 C58 45 78 50 82 62 C70 65 58 55 50 80 C42 55 30 65 18 62 C22 50 42 45 50 30 Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="f-name">SRI RAMAKRISHNA</span><br>
+                        <span class="f-sub">AYURVEDIC HOSPITAL</span>
+                    </div>
+                </a>
+                <p class="footer-desc">
+                    Healing the root cause. Restoring health naturally. Guided by authentic Ayurveda, driven by compassion.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#treatments">Treatments</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#treatments">Pain Management</a></li>
+                    <li><a href="#treatments">Stroke Rehabilitation</a></li>
+                    <li><a href="#treatments">Panchakarma Detox</a></li>
+                    <li><a href="#treatments">Neurological Disorders</a></li>
+                    <li><a href="#treatments">Lifestyle Disorders</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Important Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2025 Sri Ramakrishna Ayurvedic Hospital. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="#" class="whatsapp-float-btn" onclick="openBookingModal(); return false;" title="Book Consultation on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="float-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Appointment / WhatsApp Booking Modal -->
+    <div class="modal-backdrop" id="bookingModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fab fa-whatsapp modal-wa-icon"></i>
+                <h3>Book WhatsApp Consultation</h3>
+                <p>Fill out the quick details below to start instant consultation on WhatsApp</p>
+            </div>
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+                <div class="form-group">
+                    <label for="patientName">Patient Full Name *</label>
+                    <input type="text" id="patientName" required placeholder="e.g. Ramesh Kumar">
+                </div>
+                <div class="form-group">
+                    <label for="patientPhone">Phone / WhatsApp Number *</label>
+                    <input type="tel" id="patientPhone" required placeholder="e.g. +91 9876543210">
+                </div>
+                <div class="form-group">
+                    <label for="doctorSelect">Select Preferred Doctor</label>
+                    <select id="doctorSelect">
+                        <option value="Any Available Doctor">Any Available Specialist</option>
+                        <option value="Dr. P. Krishna Rao">Dr. P. Krishna Rao (Founder & Chief Physician)</option>
+                        <option value="Dr. Rashmi K. Rao">Dr. Rashmi K. Rao (Panchakarma Specialist)</option>
+                        <option value="Dr. Sharath B. Rao">Dr. Sharath B. Rao (Pain & Rehab Specialist)</option>
+                        <option value="Dr. Prasanna Shetty">Dr. Prasanna Shetty (Neurology Specialist)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="treatmentPackageSelect">Treatment / Package Interest</label>
+                    <select id="treatmentPackageSelect">
+                        <option value="General Consultation">General Ayurvedic Consultation</option>
+                        <option value="Pain Management">Pain Management (Back, Neck, Joints)</option>
+                        <option value="Stroke Rehabilitation">Stroke Rehabilitation Program</option>
+                        <option value="Panchakarma Detox">Panchakarma Detox Package</option>
+                        <option value="Lifestyle Wellness Package">Lifestyle Wellness Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date</label>
+                    <input type="date" id="preferredDate">
+                </div>
+                <div class="form-group">
+                    <label for="patientNotes">Health Issue / Message (Optional)</label>
+                    <textarea id="patientNotes" rows="3" placeholder="Describe your symptoms or requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-whatsapp-full btn-large">
+                    <i class="fab fa-whatsapp"></i> Launch WhatsApp Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal-backdrop" id="videoModal">
+        <div class="modal-card modal-video-card">
+            <button class="modal-close" onclick="closeModal('videoModal')">&times;</button>
+            <h3 id="videoModalTitle" class="video-modal-title">Patient Story</h3>
+            <div class="video-container">
+                <iframe id="videoIframe" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="modal-backdrop" id="lightboxModal">
+        <div class="lightbox-card">
+            <button class="modal-close lightbox-close" onclick="closeModal('lightboxModal')">&times;</button>
+            <button class="lightbox-nav prev" onclick="navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="lightbox-content">
+                <img id="lightboxImg" src="" alt="Gallery Image" class="lightbox-img">
+                <div id="lightboxCaption" class="lightbox-caption"></div>
+            </div>
+            <button class="lightbox-nav next" onclick="navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Treatment Info Modal -->
+    <div class="modal-backdrop" id="treatmentModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('treatmentModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-spa modal-spa-icon"></i>
+                <h3 id="treatmentModalTitle">Treatment Details</h3>
+            </div>
+            <div id="treatmentModalBody" class="modal-body-content">
+                <!-- Content inserted dynamically -->
+            </div>
+            <div class="modal-footer-action">
+                <button class="btn btn-whatsapp-full" onclick="closeModal('treatmentModal'); openBookingModal();">
+                    <i class="fab fa-whatsapp"></i> Book Consultation for Treatment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+</html>
