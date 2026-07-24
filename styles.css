@@ -1799,31 +1799,40 @@ ul {
 
     /* Trust Badges */
     .trust-badges-bar {
-        padding: 1.5rem 0;
+        padding: 1.8rem 0;
         margin-top: 2rem;
     }
     .trust-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
         gap: 1.2rem;
-        justify-items: center;
     }
     .trust-item {
-        gap: 0.6rem;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1rem;
     }
     .trust-item:last-child {
-        grid-column: 1 / -1;
+        grid-column: auto;
     }
     .trust-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+    .trust-text {
+        text-align: left;
     }
     .trust-number, .trust-title {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .trust-label {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
     }
 
     /* Treatments */
@@ -2051,18 +2060,15 @@ ul {
 
     /* Trust Badges */
     .trust-badges-bar {
-        padding: 1.2rem 0;
+        padding: 1.4rem 0;
         margin-top: 1.5rem;
     }
     .trust-container {
-        grid-template-columns: 1fr;
+        max-width: 280px;
         gap: 1rem;
     }
     .trust-item {
-        justify-content: center;
-    }
-    .trust-item:last-child {
-        grid-column: auto;
+        justify-content: flex-start;
     }
 
     /* Treatments */
