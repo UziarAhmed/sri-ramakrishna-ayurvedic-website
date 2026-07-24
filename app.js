@@ -117,6 +117,7 @@ function initCarousels() {
 }
 
 /* ==========================================================================
+/* ==========================================================================
    Modals Management
    ========================================================================== */
 function closeModal(modalId) {
@@ -124,10 +125,19 @@ function closeModal(modalId) {
     if (modal) {
         modal.classList.remove('active');
     }
-    // Stop iframe video if video modal
+    // Stop iframe and video if video modal
     if (modalId === 'videoModal') {
         const iframe = document.getElementById('videoIframe');
-        if (iframe) iframe.src = '';
+        if (iframe) {
+            iframe.src = '';
+            iframe.style.display = 'none';
+        }
+        const videoPlayer = document.getElementById('videoPlayer');
+        if (videoPlayer) {
+            videoPlayer.pause();
+            videoPlayer.src = '';
+            videoPlayer.style.display = 'none';
+        }
     }
 }
 
@@ -138,7 +148,16 @@ document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
             backdrop.classList.remove('active');
             if (backdrop.id === 'videoModal') {
                 const iframe = document.getElementById('videoIframe');
-                if (iframe) iframe.src = '';
+                if (iframe) {
+                    iframe.src = '';
+                    iframe.style.display = 'none';
+                }
+                const videoPlayer = document.getElementById('videoPlayer');
+                if (videoPlayer) {
+                    videoPlayer.pause();
+                    videoPlayer.src = '';
+                    videoPlayer.style.display = 'none';
+                }
             }
         }
     });
@@ -191,7 +210,7 @@ function handleBookingSubmit(event) {
     if (date) message += `📅 *Preferred Date:* ${date}\n`;
     if (notes) message += `📝 *Health Issue / Notes:* ${notes}\n`;
 
-    const hospitalWhatsAppNumber = '919480855959';
+    const hospitalWhatsAppNumber = '919731689266';
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${hospitalWhatsAppNumber}?text=${encodedMessage}`;
 
@@ -208,10 +227,31 @@ function openVideoModal(videoId, title, embedUrl) {
     const modal = document.getElementById('videoModal');
     const modalTitle = document.getElementById('videoModalTitle');
     const iframe = document.getElementById('videoIframe');
+    const videoPlayer = document.getElementById('videoPlayer');
 
-    if (modal && iframe) {
+    if (modal) {
         if (modalTitle) modalTitle.textContent = title || 'Sri Ramakrishna Ayurvedic Hospital';
-        iframe.src = embedUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+        
+        if (embedUrl && (embedUrl.endsWith('.mp4') || embedUrl.includes('assets/videos/'))) {
+            // Local MP4 Video
+            if (iframe) iframe.style.display = 'none';
+            if (videoPlayer) {
+                videoPlayer.src = embedUrl;
+                videoPlayer.style.display = 'block';
+                videoPlayer.play().catch(e => console.log('Autoplay prevented:', e));
+            }
+        } else {
+            // Embedded iframe (e.g. YouTube)
+            if (videoPlayer) {
+                videoPlayer.pause();
+                videoPlayer.style.display = 'none';
+            }
+            if (iframe) {
+                iframe.src = embedUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+                iframe.style.display = 'block';
+            }
+        }
+
         modal.classList.add('active');
     }
 }
@@ -221,28 +261,28 @@ function openVideoModal(videoId, title, embedUrl) {
    ========================================================================== */
 const galleryItems = [
     {
-        src: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+        src: 'assets/images/hospital-building-hero.jpeg',
         caption: 'Sri Ramakrishna Ayurvedic Hospital Building & Serene Campus, Kundapura'
     },
     {
-        src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-        caption: 'Expert Ayurvedic Doctor Consultation & Pulse Diagnosis'
+        src: 'assets/images/opd-consultation.jpeg',
+        caption: 'OPD Doctor Consultation Room'
     },
     {
-        src: 'https://images.unsplash.com/photo-1608248597369-094191c49122?auto=format&fit=crop&w=1200&q=80',
-        caption: 'Authentic Herbal Preparations & Medicated Oils for Therapy'
+        src: 'assets/images/therapy-room-droni.jpeg',
+        caption: 'Traditional Ayurvedic Therapy Suite & Wooden Droni'
     },
     {
-        src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
-        caption: 'Traditional Panchakarma Treatment Suite (Droni)'
+        src: 'assets/images/physiotherapy-room.jpeg',
+        caption: 'Physiotherapy & Physical Rehabilitation Center'
     },
     {
-        src: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
-        caption: 'Rejuvenating Shirodhara & Ayurvedic Herbal Steam Therapy'
+        src: 'assets/images/pharmacy.jpeg',
+        caption: 'Hospital Pharmacy - Authentic Ayurvedic Medicines & Oils'
     },
     {
-        src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
-        caption: 'Stroke Rehabilitation & Physical Therapy Gymnasium'
+        src: 'assets/images/rehab-staircase.jpeg',
+        caption: 'Specialized Staircase Training Unit for Stroke & Mobility Rehab'
     }
 ];
 
