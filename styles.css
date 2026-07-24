@@ -280,13 +280,29 @@ ul {
 .logo-icon {
     width: 52px;
     height: 52px;
-    color: var(--primary-green);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-logo-icon {
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
 }
 
-.lotus-svg {
-    width: 100%;
-    height: 100%;
+.footer-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .brand-text {
