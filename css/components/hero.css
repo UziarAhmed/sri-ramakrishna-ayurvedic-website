@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Hero Section
+   Full-width split-layout hero with left content (text + CTAs) and
+   right image frame with overlay gradient and hospital name tag.
+   ========================================================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, #FAF8F5 0%, #EBF4EE 100%);
+    padding: 4rem 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-dark-green);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.hero-subtitle-green {
+    color: var(--accent-green);
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 540px;
+    line-height: 1.7;
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-dark-green);
+    font-size: 0.95rem;
+}
+
+.location-badge i {
+    color: var(--primary-green);
+}
+
+/* ---- Hero Image Frame ---- */
+.hero-image-wrapper {
+    position: relative;
+}
+
+.image-frame-border {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid #FFFFFF;
+}
+
+.hero-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.image-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(14, 59, 35, 0.7) 0%, transparent 60%);
+}
+
+.hospital-name-tag {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--primary-dark-green);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.hospital-name-tag i {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+}

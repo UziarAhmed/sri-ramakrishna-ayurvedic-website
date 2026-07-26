@@ -1,0 +1,150 @@
+/* ==========================================================================
+   FAQ Accordion & Contact Section
+   3-column grid layout: FAQ accordion, WhatsApp help box, address + map.
+   ========================================================================== */
+
+.faq-contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.widget-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--primary-dark-green);
+    margin-bottom: 1.5rem;
+}
+
+/* ---- FAQ Accordion ---- */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--bg-white);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary-dark-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-icon {
+    font-size: 0.85rem;
+    color: var(--primary-green);
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.2rem;
+    background-color: var(--bg-warm);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0.8rem 1.2rem 1.2rem;
+}
+
+.faq-answer p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ---- WhatsApp Help Box ---- */
+.help-box {
+    background: linear-gradient(135deg, #0E3B23 0%, #155734 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.8rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.help-box-icon {
+    font-size: 3.5rem;
+    color: var(--whatsapp-bright);
+    margin-bottom: 1rem;
+}
+
+.help-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.help-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    opacity: 0.9;
+}
+
+.help-btn {
+    margin-bottom: 1.5rem;
+}
+
+.help-call-direct {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.help-call-direct a {
+    color: var(--gold-accent);
+}
+
+/* ---- Address & Map ---- */
+.hospital-address-card {
+    background-color: var(--bg-warm);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-color);
+}
+
+.address-item {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.address-item:last-child {
+    margin-bottom: 0;
+}
+
+.address-item i {
+    color: var(--primary-green);
+    margin-top: 3px;
+}
+
+.map-container {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}

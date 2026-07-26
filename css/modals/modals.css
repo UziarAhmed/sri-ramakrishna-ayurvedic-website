@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Modal System — All Dialog Overlays
+   Includes: Booking form modal, Video player modal, Gallery lightbox, Treatment info modal.
+   All modals use the shared .modal-backdrop + .modal-card structure.
+   ========================================================================== */
+
+/* ---- Base Modal Overlay ---- */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(14, 59, 35, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    padding: 1.5rem;
+}
+
+.modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---- Modal Card (Standard Form/Info) ---- */
+.modal-card {
+    background-color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 520px;
+    padding: 2.2rem;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.modal-backdrop.active .modal-card {
+    transform: translateY(0);
+}
+
+/* ---- Close Button ---- */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* ---- Modal Header (Booking) ---- */
+.modal-header {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.modal-wa-icon {
+    font-size: 2.8rem;
+    color: var(--whatsapp-bright);
+    margin-bottom: 0.5rem;
+}
+
+.modal-header h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-dark-green);
+    font-size: 1.4rem;
+}
+
+.modal-header p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* ---- Booking Form Fields ---- */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(21, 87, 52, 0.15);
+}
+
+/* ---- Gallery Lightbox ---- */
+.lightbox-card {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+}
+
+.lightbox-img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.lightbox-caption {
+    color: #FFF;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.lightbox-close {
+    color: #FFF;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFF;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.lightbox-nav.prev { left: -60px; }
+.lightbox-nav.next { right: -60px; }
+
+/* ---- Video Player Modal ---- */
+.modal-video-card {
+    max-width: 800px;
+    background: #000;
+}

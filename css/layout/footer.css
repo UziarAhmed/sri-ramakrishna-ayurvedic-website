@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Site Footer
+   Dark green multi-column footer with brand logo, links, social icons,
+   and a copyright bottom bar.
+   ========================================================================== */
+
+.site-footer {
+    background-color: #0A2E1B;
+    color: #FFFFFF;
+    padding: 4rem 0 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ---- Footer Brand Logo Area ---- */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.footer-logo-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.footer-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.logo-icon-sm {
+    width: 40px;
+    height: 40px;
+    color: var(--gold-accent);
+}
+
+.f-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.f-sub {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: var(--gold-accent);
+}
+
+.footer-desc {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* ---- Footer Link Columns ---- */
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+    margin-bottom: 1.2rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-links a {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links a:hover {
+    color: var(--gold-accent);
+    padding-left: 4px;
+}
+
+/* ---- Social Icons ---- */
+.footer-social-icons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footer-social-icons a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+}
+
+.footer-social-icons a:hover {
+    background: var(--gold-accent);
+    color: var(--primary-dark-green);
+}
+
+/* ---- Footer Bottom Bar ---- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}

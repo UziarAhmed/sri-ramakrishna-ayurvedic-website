@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Global Utilities — Layout & Shared Component Styles
+   Reusable classes used across multiple sections: container, buttons, section headers.
+   ========================================================================== */
+
+/* ---- Layout Container ---- */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ---- Section Shared Layout ---- */
+.section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-leaf-icon {
+    color: var(--primary-green);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--primary-dark-green);
+    font-weight: 700;
+}
+
+.title-underline {
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-green), var(--gold-accent));
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+/* ---- Button System ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-large {
+    padding: 0.95rem 2rem;
+    font-size: 1.05rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(21, 87, 52, 0.3);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-color);
+    color: #FFFFFF;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(18, 140, 126, 0.3);
+}
+
+.btn-whatsapp-hero {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+}
+
+.btn-whatsapp-hero:hover {
+    background-color: var(--primary-dark-green);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp-sm {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    padding: 0.55rem 1.25rem;
+    width: 100%;
+}
+
+.btn-whatsapp-sm:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+.btn-whatsapp-full {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.btn-whatsapp-full:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-outline:hover {
+    background-color: var(--light-green-bg);
+    color: var(--primary-dark-green);
+}
+
+.btn-text-link {
+    background: none;
+    border: none;
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0;
+}
+
+.btn-text-link:hover {
+    color: var(--whatsapp-hover);
+    gap: 0.7rem;
+}
+
+/* ---- WhatsApp Floating Action Button ---- */
+.whatsapp-float-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: var(--whatsapp-bright);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.whatsapp-float-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--whatsapp-hover);
+}
+
+.float-tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: var(--primary-dark-green);
+    color: #FFF;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.whatsapp-float-btn:hover .float-tooltip {
+    opacity: 1;
+}

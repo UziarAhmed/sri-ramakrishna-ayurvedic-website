@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Treatment Packages Section
+   4-column pricing card grid. Featured card has gold border and badge.
+   ========================================================================== */
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.package-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: var(--transition);
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-green);
+}
+
+.package-card.featured {
+    border: 2px solid var(--gold-accent);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ---- Featured Badge ---- */
+.package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--gold-accent);
+    color: var(--primary-dark-green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.25rem 1rem;
+    border-radius: var(--radius-full);
+    letter-spacing: 1px;
+}
+
+/* ---- Package Card Contents ---- */
+.package-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--light-green-bg);
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 1.2rem;
+}
+
+.package-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--primary-dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.package-for {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    min-height: 40px;
+}
+
+.package-duration {
+    background-color: var(--bg-warm);
+    color: var(--primary-dark-green);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin-bottom: 1.2rem;
+}
+
+/* ---- Pricing ---- */
+.package-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.old-price {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.new-price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-green);
+}
+
+.packages-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}

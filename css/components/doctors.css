@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Meet Our Doctors Section
+   5-column grid of doctor cards with photo, name, degree, specialty,
+   experience badge, and a WhatsApp consultation CTA button.
+   ========================================================================== */
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+}
+
+.doctor-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ---- Doctor Portrait ---- */
+.doctor-photo-wrapper {
+    height: 240px;
+    overflow: hidden;
+    background-color: #E2E8F0;
+}
+
+.doctor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: var(--transition);
+}
+
+.doctor-card:hover .doctor-img {
+    transform: scale(1.05);
+}
+
+/* ---- Doctor Information ---- */
+.doctor-info {
+    padding: 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--primary-dark-green);
+    margin-bottom: 0.2rem;
+}
+
+.doctor-degree {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.doctor-specialty {
+    font-size: 0.9rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.doctor-exp-badge {
+    background-color: var(--light-green-bg);
+    color: var(--primary-dark-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-green);
+}
+
+/* ---- Why Choose Us Banner ---- */
+.why-choose-banner {
+    background: linear-gradient(135deg, #0E3B23 0%, #155734 100%);
+    color: #FFFFFF;
+    padding: 3.5rem 0;
+    text-align: center;
+}
+
+.why-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.why-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.pillar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pillar-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--gold-accent);
+    transition: var(--transition);
+}
+
+.pillar-item:hover .pillar-icon {
+    background: var(--gold-accent);
+    color: var(--primary-dark-green);
+    transform: scale(1.1);
+}
+
+.pillar-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}

@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Treatments Carousel Section
+   Horizontally scrollable grid of treatment cards with prev/next nav buttons.
+   ========================================================================== */
+
+.treatments-section {
+    background-color: var(--bg-warm);
+}
+
+.treatments-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.2rem 1.5rem;
+    scrollbar-width: none;
+}
+
+.treatments-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---- Treatment Card ---- */
+.treatment-card {
+    scroll-snap-align: start;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+}
+
+.treatment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-green);
+}
+
+.treatment-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--light-green-bg);
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    border: 1px dashed var(--primary-green);
+}
+
+.treatment-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-dark-green);
+    margin-bottom: 0.7rem;
+}
+
+.treatment-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* ---- Carousel Navigation Buttons ---- */
+.carousel-nav {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-dark-green);
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.carousel-nav:hover {
+    background-color: var(--primary-green);
+    transform: scale(1.1);
+}
+
+.prev-btn {
+    left: -22px;
+}
+
+.next-btn {
+    right: -22px;
+}

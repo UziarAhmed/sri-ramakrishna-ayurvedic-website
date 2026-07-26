@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Patient Testimonials / Recovery Stories Section
+   3-column carousel of story cards with a thumbnail photo, play button overlay,
+   patient name, quote, and a "Watch Video" link.
+   ========================================================================== */
+
+.testimonials-section {
+    background-color: var(--bg-warm);
+}
+
+.testimonials-wrapper {
+    position: relative;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* ---- Story Card ---- */
+.story-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ---- Thumbnail with Play Overlay ---- */
+.story-photo-box {
+    position: relative;
+    height: 220px;
+}
+
+.story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-green);
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    padding-left: 3px;
+}
+
+.play-overlay-btn:hover {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ---- Story Text Content ---- */
+.story-content {
+    padding: 1.5rem;
+}
+
+.story-category {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--primary-dark-green);
+    margin-bottom: 0.2rem;
+}
+
+.story-patient {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.story-quote {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.watch-video-btn {
+    background: none;
+    border: none;
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.watch-video-btn:hover {
+    color: var(--whatsapp-hover);
+}
