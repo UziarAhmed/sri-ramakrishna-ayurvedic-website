@@ -11,8 +11,11 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
     font-size: 16px;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -21,6 +24,9 @@ body {
     background-color: var(--bg-white);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a {
@@ -37,4 +43,8 @@ img {
 
 ul {
     list-style: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
 }

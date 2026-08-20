@@ -43,20 +43,43 @@ export function closeModal(modalId) {
 }
 
 /**
- * Initializes backdrop click-to-close behavior for all modals on the page.
+ * Closes whichever modal is currently active on the screen.
+ */
+export function closeActiveModal() {
+    const activeModals = document.querySelectorAll('.modal-backdrop.active');
+    activeModals.forEach(modal => {
+        closeModal(modal.id);
+    });
+}
+
+/**
+ * Initializes backdrop click-to-close behavior and Escape key listener for all modals.
+ * Also sets minimum date for booking form.
  * Call once on DOMContentLoaded.
  */
 export function initModalBackdrops() {
+    // Backdrop click to close
     document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
-                backdrop.classList.remove('active');
-                if (backdrop.id === 'videoModal') {
-                    _stopVideoPlayback();
-                }
+                closeModal(backdrop.id);
             }
         });
     });
+
+    // Escape key to close any active modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            closeActiveModal();
+        }
+    });
+
+    // Enforce today as minimum booking date
+    const dateInput = document.getElementById('preferredDate');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+    }
 }
 
 /**
@@ -93,7 +116,14 @@ export function openBookingModal(doctorName = '', packageName = '') {
 
     if (doctorName) {
         const doctorSelect = document.getElementById('doctorSelect');
-        if (doctorSelect) doctorSelect.value = doctorName;
+        if (doctorSelect) {
+            for (let i = 0; i < doctorSelect.options.length; i++) {
+                if (doctorSelect.options[i].value.includes(doctorName) || doctorSelect.options[i].text.includes(doctorName)) {
+                    doctorSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
     }
 
     if (packageName) {
@@ -157,7 +187,6 @@ export function openVideoModal(videoId, title, embedUrl) {
     const isLocalMp4 = embedUrl && (embedUrl.endsWith('.mp4') || embedUrl.includes('assets/videos/'));
 
     if (isLocalMp4) {
-        // Play local MP4 with HTML5 video element
         if (iframe) iframe.style.display = 'none';
         if (videoPlayer) {
             videoPlayer.src = embedUrl;
@@ -165,7 +194,6 @@ export function openVideoModal(videoId, title, embedUrl) {
             videoPlayer.play().catch(e => console.log('Autoplay prevented:', e));
         }
     } else {
-        // Embed YouTube or external iframe
         if (videoPlayer) {
             videoPlayer.pause();
             videoPlayer.style.display = 'none';
@@ -183,13 +211,8 @@ export function openVideoModal(videoId, title, embedUrl) {
    Gallery Lightbox
    ────────────────────────────────────────────────────────────────────────── */
 
-/** Tracks the currently visible gallery image index */
 let currentLightboxIndex = 0;
 
-/**
- * Opens the gallery lightbox at the given index.
- * @param {number} index - Index into the galleryItems array
- */
 export function openLightbox(index) {
     currentLightboxIndex = index;
     _updateLightbox();
@@ -197,19 +220,11 @@ export function openLightbox(index) {
     if (modal) modal.classList.add('active');
 }
 
-/**
- * Navigates the lightbox by ±1 direction (wraps around).
- * @param {number} direction - +1 for next, -1 for previous
- */
 export function navigateLightbox(direction) {
     currentLightboxIndex = (currentLightboxIndex + direction + galleryItems.length) % galleryItems.length;
     _updateLightbox();
 }
 
-/**
- * Updates the lightbox image src and caption text from the current index.
- * @private
- */
 function _updateLightbox() {
     const img     = document.getElementById('lightboxImg');
     const caption = document.getElementById('lightboxCaption');
@@ -224,10 +239,6 @@ function _updateLightbox() {
    Treatment Info Modal
    ────────────────────────────────────────────────────────────────────────── */
 
-/**
- * Opens the treatment detail modal and populates it with structured content.
- * @param {string} treatmentKey - Key in the treatmentDetails data object
- */
 export function openTreatmentModal(treatmentKey) {
     const data = treatmentDetails[treatmentKey];
     if (!data) return;
@@ -240,26 +251,22 @@ export function openTreatmentModal(treatmentKey) {
 
     modalTitle.textContent = data.title;
 
-    let html = `<p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:1.2rem;">${data.description}</p>`;
+    let html = `<p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:1.2rem;line-height:1.6;">${data.description}</p>`;
 
-    html += `<h4 style="color:var(--primary-dark-green);margin-bottom:0.5rem;font-family:var(--font-heading);">Key Therapies Included:</h4>`;
-    html += `<ul style="margin-bottom:1.2rem;padding-left:1.2rem;list-style:disc;color:var(--text-dark);font-size:0.9rem;">`;
+    html += `<h4 style="color:var(--primary-dark-green);margin-bottom:0.5rem;font-family:var(--font-heading);font-size:1.05rem;">Key Therapies Included:</h4>`;
+    html += `<ul style="margin-bottom:1.2rem;padding-left:1.2rem;list-style:disc;color:var(--text-dark);font-size:0.9rem;line-height:1.7;">`;
     data.therapies.forEach(t => {
-        html += `<li style="margin-bottom:0.3rem;"><strong>${t}</strong></li>`;
+        html += `<li style="margin-bottom:0.25rem;"><strong>${t}</strong></li>`;
     });
     html += `</ul>`;
 
-    html += `<h4 style="color:var(--primary-dark-green);margin-bottom:0.5rem;font-family:var(--font-heading);">Expected Benefits:</h4>`;
-    html += `<p style="font-size:0.9rem;color:var(--text-dark);background-color:var(--light-green-bg);padding:0.8rem;border-radius:var(--radius-sm);border:1px solid var(--border-green);">${data.benefits}</p>`;
+    html += `<h4 style="color:var(--primary-dark-green);margin-bottom:0.5rem;font-family:var(--font-heading);font-size:1.05rem;">Expected Benefits:</h4>`;
+    html += `<p style="font-size:0.9rem;color:var(--text-dark);background-color:var(--light-green-bg);padding:0.8rem 1rem;border-radius:var(--radius-sm);border:1px solid var(--border-green);line-height:1.5;">${data.benefits}</p>`;
 
     modalBody.innerHTML = html;
     modal.classList.add('active');
 }
 
-/**
- * Alias for openTreatmentModal — called from nav dropdown onclick handlers.
- * @param {string} treatmentName
- */
 export function selectTreatment(treatmentName) {
     openTreatmentModal(treatmentName);
 }

@@ -18,18 +18,23 @@
     border: 1px solid var(--border-color);
     transition: var(--transition);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .doctor-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-md);
+    border-color: var(--border-green);
 }
 
 /* ---- Doctor Portrait ---- */
 .doctor-photo-wrapper {
-    height: 240px;
+    height: 220px;
     overflow: hidden;
-    background-color: #E2E8F0;
+    background-color: #F1F5F9;
+    position: relative;
 }
 
 .doctor-img {
@@ -41,47 +46,53 @@
 }
 
 .doctor-card:hover .doctor-img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 /* ---- Doctor Information ---- */
 .doctor-info {
-    padding: 1.5rem 1.2rem;
+    padding: 1.25rem 1rem 1.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .doctor-name {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.08rem;
     color: var(--primary-dark-green);
     margin-bottom: 0.2rem;
+    line-height: 1.25;
 }
 
 .doctor-degree {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.4rem;
+    letter-spacing: 0.4px;
 }
 
 .doctor-specialty {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     color: var(--accent-green);
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
 }
 
 .doctor-exp-badge {
     background-color: var(--light-green-bg);
     color: var(--primary-dark-green);
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 700;
-    padding: 0.35rem 0.9rem;
+    padding: 0.3rem 0.8rem;
     border-radius: var(--radius-full);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
     border: 1px solid var(--border-green);
+    white-space: nowrap;
 }
 
 /* ---- Why Choose Us Banner ---- */
@@ -94,7 +105,7 @@
 
 .why-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
     margin-bottom: 2.5rem;
 }
 
@@ -112,15 +123,15 @@
 }
 
 .pillar-icon {
-    width: 68px;
-    height: 68px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--gold-accent);
     transition: var(--transition);
 }
@@ -128,11 +139,11 @@
 .pillar-item:hover .pillar-icon {
     background: var(--gold-accent);
     color: var(--primary-dark-green);
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .pillar-label {
     font-weight: 600;
-    font-size: 0.95rem;
-    line-height: 1.3;
+    font-size: 0.92rem;
+    line-height: 1.35;
 }
