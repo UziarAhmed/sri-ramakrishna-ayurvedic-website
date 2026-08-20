@@ -675,7 +675,81 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="gallery-grid">
+            <!-- 3D Coverflow Carousel -->
+            <div class="gallery-carousel-wrapper">
+
+                <!-- Prev Arrow -->
+                <button class="gallery-carousel-nav gallery-prev" id="galleryPrev" aria-label="Previous gallery image">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Carousel Track -->
+                <div class="gallery-carousel-track" id="galleryCarouselTrack">
+
+                    <div class="gallery-slide" data-index="0" onclick="openLightbox(0)">
+                        <img src="assets/images/hospital-building-hero.jpeg" alt="Sri Ramakrishna Ayurvedic Hospital Building in Kundapura" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">Hospital Campus</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                    <div class="gallery-slide" data-index="1" onclick="openLightbox(1)">
+                        <img src="assets/images/opd-consultation.jpeg" alt="Doctor OPD Consultation Suite" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">OPD Consultation Room</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                    <div class="gallery-slide" data-index="2" onclick="openLightbox(2)">
+                        <img src="assets/images/therapy-room-droni.jpeg" alt="Traditional Ayurvedic Therapy Room with Droni Table" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">Ayurvedic Therapy Room</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                    <div class="gallery-slide" data-index="3" onclick="openLightbox(3)">
+                        <img src="assets/images/physiotherapy-room.jpeg" alt="Physiotherapy and Physical Rehab Center" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">Physiotherapy Center</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                    <div class="gallery-slide" data-index="4" onclick="openLightbox(4)">
+                        <img src="assets/images/pharmacy.jpeg" alt="Ayurvedic Pharmacy with Herbal Formulations" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">Hospital Pharmacy</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                    <div class="gallery-slide" data-index="5" onclick="openLightbox(5)">
+                        <img src="assets/images/rehab-staircase.jpeg" alt="Stroke and Mobility Rehabilitation Staircase Unit" loading="lazy" decoding="async">
+                        <div class="gallery-slide-overlay">
+                            <span class="gallery-slide-caption">Rehabilitation Staircase</span>
+                        </div>
+                        <span class="gallery-slide-expand"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+
+                </div>
+
+                <!-- Next Arrow -->
+                <button class="gallery-carousel-nav gallery-next" id="galleryNext" aria-label="Next gallery image">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Dot Indicators -->
+            <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Gallery navigation"></div>
+            <p class="gallery-swipe-hint">← Swipe to browse →</p>
+
+        </div>
+    </section>
+
+
                 <div class="gallery-item" onclick="openLightbox(0)">
                     <img src="assets/images/hospital-building-hero.jpeg" alt="Sri Ramakrishna Ayurvedic Hospital Building in Kundapura" class="gallery-img" width="380" height="240" loading="lazy" decoding="async">
                     <div class="gallery-hover-overlay">
