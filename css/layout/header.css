@@ -1,68 +1,6 @@
 /* ==========================================================================
-   Top Announcement Bar
-   Dark green bar above the navigation with contact info and social links.
-   ========================================================================== */
-
-.top-bar {
-    background-color: var(--primary-dark-green);
-    color: #FFFFFF;
-    font-size: 0.85rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.top-bar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-}
-
-.top-info {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.top-info span {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.top-info i {
-    color: var(--gold-accent);
-}
-
-.top-info a:hover {
-    color: var(--gold-accent);
-}
-
-.top-social {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.top-social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    color: #FFF;
-    font-size: 0.8rem;
-}
-
-.top-social a:hover {
-    background: var(--gold-accent);
-    color: var(--primary-dark-green);
-}
-
-/* ==========================================================================
    Sticky Main Header
-   White sticky header containing the brand logo, desktop nav, and CTA button.
+   White sticky header with compact brand logo, nav, and CTA button.
    ========================================================================== */
 
 .main-header {
@@ -78,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 85px;
+    height: 68px;
     overflow: visible;
 }
 
@@ -86,12 +24,12 @@
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.65rem;
 }
 
 .logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -112,21 +50,21 @@
 .hospital-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1rem;
     letter-spacing: 0.5px;
     color: var(--primary-dark-green);
     line-height: 1.1;
 }
 
 .hospital-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: var(--primary-green);
     letter-spacing: 1.5px;
 }
 
 .hospital-location {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: 1px;
@@ -137,7 +75,7 @@
     display: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--primary-dark-green);
     cursor: pointer;
 }

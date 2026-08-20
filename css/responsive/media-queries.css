@@ -124,7 +124,7 @@
 
     /* Header & Mobile Menu */
     .header-container {
-        height: 72px;
+        height: 68px;
     }
     .logo-icon {
         width: 44px;
@@ -149,10 +149,10 @@
     /* Mobile Nav Overlay */
     .nav-menu {
         position: fixed;
-        top: 72px;
+        top: 68px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 72px);
+        height: calc(100vh - 68px);
         background-color: #FFFFFF;
         transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         padding: 1.5rem 2rem;
