@@ -1,18 +1,22 @@
 /* ==========================================================================
    Hospital Gallery — 3D Coverflow Carousel
    Premium carousel with perspective scaling: large center card, side cards
-   visually recede in 3D space. Smooth CSS transitions + dot indicators.
+   visually recede in 3D space. Strictly clipped to prevent mobile viewport overflow.
    ========================================================================== */
 
 .gallery-section {
     background-color: var(--bg-warm);
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* ---- Carousel Wrapper ---- */
 .gallery-carousel-wrapper {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     perspective: 1200px;
     padding: 0.5rem 0 1.2rem;
 }
@@ -26,12 +30,15 @@
     position: relative;
     height: 350px;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* ---- Each Slide Card ---- */
 .gallery-slide {
     position: absolute;
     width: 520px;
+    max-width: 90vw;
     height: 330px;
     border-radius: 18px;
     overflow: hidden;
@@ -166,8 +173,8 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #FFFFFF;
     border: none;
@@ -241,20 +248,20 @@
         height: 310px;
     }
     .gallery-slide {
-        width: 440px;
-        height: 290px;
+        width: 420px;
+        height: 280px;
     }
     .gallery-slide.is-prev {
-        transform: translateX(-350px) scale(0.78) rotateY(10deg);
+        transform: translateX(-320px) scale(0.78) rotateY(10deg);
     }
     .gallery-slide.is-next {
-        transform: translateX(350px) scale(0.78) rotateY(-10deg);
+        transform: translateX(320px) scale(0.78) rotateY(-10deg);
     }
     .gallery-slide.is-prev-far {
-        transform: translateX(-600px) scale(0.55) rotateY(18deg);
+        transform: translateX(-540px) scale(0.55) rotateY(16deg);
     }
     .gallery-slide.is-next-far {
-        transform: translateX(600px) scale(0.55) rotateY(-18deg);
+        transform: translateX(540px) scale(0.55) rotateY(-16deg);
     }
 }
 
@@ -263,31 +270,32 @@
         padding: 0.3rem 0 0.8rem;
     }
     .gallery-carousel-track {
-        height: 270px;
+        height: 260px;
     }
     .gallery-slide {
-        width: 340px;
-        height: 240px;
+        width: 320px;
+        max-width: 85vw;
+        height: 230px;
         border-radius: 16px;
     }
     .gallery-slide.is-prev {
-        transform: translateX(-240px) scale(0.76) rotateY(7deg);
+        transform: translateX(-220px) scale(0.76) rotateY(7deg);
     }
     .gallery-slide.is-next {
-        transform: translateX(240px) scale(0.76) rotateY(-7deg);
+        transform: translateX(220px) scale(0.76) rotateY(-7deg);
     }
     .gallery-slide.is-prev-far {
-        transform: translateX(-420px) scale(0.5) rotateY(12deg);
-        opacity: 0.35;
+        transform: translateX(-380px) scale(0.5) rotateY(12deg);
+        opacity: 0.3;
     }
     .gallery-slide.is-next-far {
-        transform: translateX(420px) scale(0.5) rotateY(-12deg);
-        opacity: 0.35;
+        transform: translateX(380px) scale(0.5) rotateY(-12deg);
+        opacity: 0.3;
     }
     .gallery-carousel-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
+        width: 38px;
+        height: 38px;
+        font-size: 0.88rem;
     }
     .gallery-swipe-hint {
         display: block;
@@ -299,23 +307,23 @@
 
 @media (max-width: 480px) {
     .gallery-carousel-wrapper {
-        padding: 0.2rem 0 0.6rem;
+        padding: 0.2rem 0 0.5rem;
     }
     .gallery-carousel-track {
-        height: 245px;
+        height: 235px;
     }
     .gallery-slide {
-        width: 300px;
-        max-width: 86vw;
-        height: 220px;
+        width: 280px;
+        max-width: 82vw;
+        height: 210px;
         border-radius: 14px;
     }
     .gallery-slide.is-prev {
-        transform: translateX(-200px) scale(0.76) rotateY(5deg);
+        transform: translateX(-170px) scale(0.76) rotateY(5deg);
         opacity: 0.45;
     }
     .gallery-slide.is-next {
-        transform: translateX(200px) scale(0.76) rotateY(-5deg);
+        transform: translateX(170px) scale(0.76) rotateY(-5deg);
         opacity: 0.45;
     }
     .gallery-slide.is-prev-far,
@@ -323,9 +331,9 @@
         opacity: 0;
     }
     .gallery-carousel-nav {
-        width: 36px;
-        height: 36px;
-        font-size: 0.85rem;
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
     }
     .gallery-carousel-nav.gallery-prev {
         left: 0.2rem;

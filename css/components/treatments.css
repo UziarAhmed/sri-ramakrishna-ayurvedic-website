@@ -5,6 +5,8 @@
 
 .treatments-section {
     background-color: var(--bg-warm);
+    overflow: hidden;
+    width: 100%;
 }
 
 .treatments-carousel-wrapper {
@@ -12,17 +14,19 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    width: 100%;
 }
 
 .treatments-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 0.5rem 0.2rem 1.5rem;
     scrollbar-width: none;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .treatments-grid::-webkit-scrollbar {
@@ -42,7 +46,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 260px;
+    flex: 0 0 260px;
+    min-width: 240px;
 }
 
 .treatment-card:hover {
@@ -105,9 +110,9 @@
 }
 
 .prev-btn {
-    left: -22px;
+    left: 4px;
 }
 
 .next-btn {
-    right: -22px;
+    right: 4px;
 }
