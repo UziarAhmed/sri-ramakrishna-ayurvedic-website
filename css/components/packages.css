@@ -1,13 +1,31 @@
 /* ==========================================================================
    Treatment Packages Section
-   4-column pricing card grid. Featured card has gold border and badge.
+   4-column pricing card grid on desktop, horizontal scroll-snap carousel on mobile/tablet.
+   Featured card has gold border and badge.
    ========================================================================== */
+
+.packages-section {
+    background-color: var(--bg-white);
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.packages-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: visible;
+}
 
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    width: 100%;
     margin-bottom: 2rem;
+    padding-top: 1rem;
 }
 
 .package-card {
@@ -50,6 +68,8 @@
     border-radius: var(--radius-full);
     letter-spacing: 1px;
     box-shadow: 0 2px 8px rgba(197, 157, 66, 0.4);
+    white-space: nowrap;
+    z-index: 5;
 }
 
 /* ---- Package Card Contents ---- */
@@ -64,6 +84,7 @@
     justify-content: center;
     font-size: 1.3rem;
     margin: 0 auto 1rem;
+    border: 1px dashed var(--primary-green);
 }
 
 .package-name {
@@ -120,4 +141,11 @@
     font-size: 0.86rem;
     color: var(--text-muted);
     font-style: italic;
+}
+
+/* On Desktop >= 1025px, hide packages carousel nav buttons */
+@media (min-width: 1025px) {
+    .packages-carousel-wrapper .carousel-nav {
+        display: none;
+    }
 }

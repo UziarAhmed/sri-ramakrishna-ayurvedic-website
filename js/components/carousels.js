@@ -12,6 +12,7 @@
 export function initCarousels() {
     _initScrollCarousel('treatmentsGrid', 'treatmentsPrev', 'treatmentsNext', 300);
     _initScrollCarousel('doctorsGrid', 'doctorsPrev', 'doctorsNext', 300);
+    _initScrollCarousel('packagesGrid', 'packagesPrev', 'packagesNext', 300);
     _initScrollCarousel('testimonialsGrid', 'testimonialsPrev', 'testimonialsNext', 350);
 }
 

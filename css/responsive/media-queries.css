@@ -27,9 +27,35 @@
         flex: 0 0 calc((100% - 2 * 1.25rem) / 3);
         min-width: 220px;
     }
+    /* Packages */
+    .packages-carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .packages-carousel-wrapper .carousel-nav {
+        display: flex;
+    }
     .packages-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+        display: flex;
+        gap: 1.25rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 1.2rem 0.5rem 1.8rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .packages-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .package-card {
+        flex: 0 0 280px;
+        min-width: 260px;
+        scroll-snap-align: center;
     }
 
     /* Why Choose Banner */
@@ -263,14 +289,36 @@
     }
 
     /* Packages */
+    .packages-carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .packages-carousel-wrapper .carousel-nav {
+        display: flex;
+    }
     .packages-grid {
-        grid-template-columns: 1fr;
-        max-width: 360px;
-        margin: 0 auto 1.5rem;
+        display: flex;
         gap: 1.2rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 1.2rem 0.4rem 1.6rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1.2rem;
+    }
+    .packages-grid::-webkit-scrollbar {
+        display: none;
     }
     .package-card {
+        flex: 0 0 260px;
+        min-width: 240px;
         padding: 1.6rem 1.2rem;
+        scroll-snap-align: center;
     }
 
     /* FAQ & Contact */
@@ -447,9 +495,13 @@
 
     /* Packages */
     .packages-grid {
-        max-width: 320px;
+        gap: 1rem;
+        padding: 1.1rem 0.2rem 1.4rem;
+        margin: 0 0 1rem;
     }
     .package-card {
+        flex: 0 0 240px;
+        min-width: 220px;
         padding: 1.4rem 1rem;
     }
 
@@ -600,6 +652,10 @@
     }
     .trust-label {
         font-size: 0.56rem;
+    }
+    .package-card {
+        flex: 0 0 220px;
+        min-width: 200px;
     }
 }
 

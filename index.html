@@ -571,91 +571,101 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="packages-grid">
-                <!-- Package 1 -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <div class="package-icon" aria-hidden="true">
-                            <i class="fas fa-spa"></i>
+            <div class="packages-carousel-wrapper">
+                <button class="carousel-nav prev-btn" id="packagesPrev" aria-label="Previous package">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="packages-grid" id="packagesGrid">
+                    <!-- Package 1 -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <div class="package-icon" aria-hidden="true">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3 class="package-name">Pain Relief Package</h3>
+                            <p class="package-for">For Back Pain, Neck Pain, Sciatica, Joint Pain</p>
                         </div>
-                        <h3 class="package-name">Pain Relief Package</h3>
-                        <p class="package-for">For Back Pain, Neck Pain, Sciatica, Joint Pain</p>
+                        <div class="package-body">
+                            <div class="package-duration">7 – 14 Days</div>
+                            <div class="package-pricing">
+                                <span class="old-price">₹35,000</span>
+                                <span class="new-price">₹10,000</span>
+                            </div>
+                            <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Pain Relief Package')" aria-label="Enquire about Pain Relief Package on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                            </button>
+                        </div>
                     </div>
-                    <div class="package-body">
-                        <div class="package-duration">7 – 14 Days</div>
-                        <div class="package-pricing">
-                            <span class="old-price">₹35,000</span>
-                            <span class="new-price">₹10,000</span>
+
+                    <!-- Package 2 -->
+                    <div class="package-card featured">
+                        <div class="package-badge">Popular</div>
+                        <div class="package-header">
+                            <div class="package-icon" aria-hidden="true">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="package-name">Stroke Rehabilitation Package</h3>
+                            <p class="package-for">Complete rehab program for better recovery & independence</p>
                         </div>
-                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Pain Relief Package')" aria-label="Enquire about Pain Relief Package on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
-                        </button>
+                        <div class="package-body">
+                            <div class="package-duration">14 – 28 Days</div>
+                            <div class="package-pricing">
+                                <span class="old-price">₹60,000</span>
+                                <span class="new-price">₹20,000</span>
+                            </div>
+                            <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Stroke Rehabilitation Package')" aria-label="Enquire about Stroke Rehabilitation Package on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <div class="package-icon" aria-hidden="true">
+                                <i class="fas fa-mortar-pestle"></i>
+                            </div>
+                            <h3 class="package-name">Panchakarma Detox Package</h3>
+                            <p class="package-for">Detoxify, Rejuvenate & Recharge your body</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-duration">7 – 14 Days</div>
+                            <div class="package-pricing">
+                                <span class="old-price">₹30,000</span>
+                                <span class="new-price">₹12,000</span>
+                            </div>
+                            <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Panchakarma Detox Package')" aria-label="Enquire about Panchakarma Detox Package on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <div class="package-icon" aria-hidden="true">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="package-name">Lifestyle Wellness Package</h3>
+                            <p class="package-for">For Stress, Obesity, Diabetes, Thyroid & more</p>
+                        </div>
+                        <div class="package-body">
+                            <div class="package-duration">14 – 21 Days</div>
+                            <div class="package-pricing">
+                                <span class="old-price">₹40,000</span>
+                                <span class="new-price">₹15,000</span>
+                            </div>
+                            <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Lifestyle Wellness Package')" aria-label="Enquire about Lifestyle Wellness Package on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Package 2 -->
-                <div class="package-card featured">
-                    <div class="package-badge">Popular</div>
-                    <div class="package-header">
-                        <div class="package-icon" aria-hidden="true">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3 class="package-name">Stroke Rehabilitation Package</h3>
-                        <p class="package-for">Complete rehab program for better recovery & independence</p>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-duration">14 – 28 Days</div>
-                        <div class="package-pricing">
-                            <span class="old-price">₹60,000</span>
-                            <span class="new-price">₹20,000</span>
-                        </div>
-                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Stroke Rehabilitation Package')" aria-label="Enquire about Stroke Rehabilitation Package on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <div class="package-icon" aria-hidden="true">
-                            <i class="fas fa-mortar-pestle"></i>
-                        </div>
-                        <h3 class="package-name">Panchakarma Detox Package</h3>
-                        <p class="package-for">Detoxify, Rejuvenate & Recharge your body</p>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-duration">7 – 14 Days</div>
-                        <div class="package-pricing">
-                            <span class="old-price">₹30,000</span>
-                            <span class="new-price">₹12,000</span>
-                        </div>
-                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Panchakarma Detox Package')" aria-label="Enquire about Panchakarma Detox Package on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Package 4 -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <div class="package-icon" aria-hidden="true">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3 class="package-name">Lifestyle Wellness Package</h3>
-                        <p class="package-for">For Stress, Obesity, Diabetes, Thyroid & more</p>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-duration">14 – 21 Days</div>
-                        <div class="package-pricing">
-                            <span class="old-price">₹40,000</span>
-                            <span class="new-price">₹15,000</span>
-                        </div>
-                        <button class="btn btn-whatsapp-full" onclick="openBookingModal('', 'Lifestyle Wellness Package')" aria-label="Enquire about Lifestyle Wellness Package on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
-                        </button>
-                    </div>
-                </div>
+                <button class="carousel-nav next-btn" id="packagesNext" aria-label="Next package">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
 
             <p class="packages-note">
