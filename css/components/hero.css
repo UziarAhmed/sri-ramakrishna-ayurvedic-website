@@ -1,50 +1,36 @@
 /* ==========================================================================
-   Hero Section — Split Shade Background
-   Left side: Solid rich dark emerald with left-aligned headline & CTAs.
-   Middle: Smooth gradient shade transition.
-   Right side: Crisp hospital building image view.
+   Hero Section — Full-Bleed Cinematic Background (Reference Design)
+   Full-width hospital building background image with a subtle cinematic tint,
+   elegant typography, and high-contrast readable elements.
    ========================================================================== */
 
 .hero-section {
     position: relative;
-    background-color: #072515;
+    background-color: #0A2415;
     background-image: url('../../assets/images/hospital-building-hero.jpeg');
-    background-position: right center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFFFFF;
-    padding: 4.5rem 0 0;
+    padding: 5rem 0 0;
     overflow: hidden;
-    min-height: 560px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
 
-/* ---- Middle-to-Right Shade Gradient Overlay ---- */
+/* ---- Subtle Cinematic Dark Overlay (Reveals Full Building Across Section) ---- */
 .hero-background-overlay {
     position: absolute;
     inset: 0;
-    background: 
-        /* Left-to-right fade: solid green on left, smooth shade in middle, clear image on right */
-        linear-gradient(
-            to right,
-            #072515 0%,
-            #072515 38%,
-            rgba(7, 37, 21, 0.92) 50%,
-            rgba(7, 37, 21, 0.65) 65%,
-            rgba(7, 37, 21, 0.25) 82%,
-            rgba(7, 37, 21, 0.08) 100%
-        ),
-        /* Subtle top/bottom vignette */
-        linear-gradient(
-            to bottom,
-            rgba(7, 37, 21, 0.35) 0%,
-            transparent 25%,
-            transparent 75%,
-            rgba(4, 20, 11, 0.85) 100%
-        );
+    background: linear-gradient(
+        180deg,
+        rgba(5, 22, 13, 0.50) 0%,
+        rgba(6, 26, 16, 0.55) 50%,
+        rgba(4, 18, 10, 0.68) 100%
+    );
     z-index: 1;
 }
 
@@ -54,7 +40,7 @@
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1.5rem 2.8rem;
+    padding: 0 1.5rem 3.5rem;
 }
 
 .hero-content {
@@ -62,7 +48,7 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    max-width: 640px;
+    max-width: 680px;
 }
 
 /* ---- Top Hospital Badge ---- */
@@ -70,19 +56,19 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    padding: 0.45rem 1.15rem;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.45rem 1.2rem;
     border-radius: var(--radius-full);
     color: var(--gold-accent);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 700;
     letter-spacing: 0.8px;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-hospital-badge i {
@@ -93,29 +79,27 @@
 /* ---- Hero Typography ---- */
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
     font-weight: 700;
     color: #FFFFFF;
-    line-height: 1.16;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.4px;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+    line-height: 1.14;
+    margin-bottom: 1.3rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 5px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subtitle-green {
-    background: linear-gradient(90deg, #6EE7B7, #FDE047);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+    color: #FFFFFF;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 5px rgba(0, 0, 0, 0.9);
 }
 
 .hero-description {
-    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
-    color: rgba(255, 255, 255, 0.92);
-    margin-bottom: 2rem;
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.2rem;
     max-width: 580px;
     line-height: 1.7;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 .hero-description strong {
@@ -136,22 +120,24 @@
 .btn-whatsapp-hero {
     background-color: var(--whatsapp-color);
     color: #FFFFFF;
-    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .btn-whatsapp-hero:hover {
     background-color: var(--whatsapp-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
 }
 
 .btn-hero-video {
-    border: 2px solid rgba(255, 255, 255, 0.65);
+    border: 2px solid rgba(255, 255, 255, 0.85);
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 .btn-hero-video:hover {
@@ -166,9 +152,9 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 0.92rem;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
 .location-badge i {
@@ -179,10 +165,10 @@
 .trust-badges-bar {
     position: relative;
     z-index: 2;
-    background: rgba(4, 20, 11, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(4, 18, 10, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.8rem 0;
     margin-top: auto;
     width: 100%;
