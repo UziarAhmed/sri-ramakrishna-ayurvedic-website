@@ -1,7 +1,7 @@
 /**
  * Navigation Component
  * ----------------------
- * Handles sticky header behavior, mobile hamburger menu toggle,
+ * Handles transparent-to-solid sticky header on scroll, mobile hamburger menu toggle,
  * and closing the mobile nav when a link is clicked.
  */
 
@@ -11,7 +11,7 @@
  */
 export function initNavigation() {
     _initMobileMenuToggle();
-    _initScrollShadow();
+    _initScrollHeader();
 }
 
 /**
@@ -50,17 +50,21 @@ function _initMobileMenuToggle() {
 }
 
 /**
- * Adds a deeper box shadow to the sticky header when the user scrolls
- * past 50px to visually separate it from page content.
+ * Manages transparent header at top of page and solid header when scrolled past hero.
  * @private
  */
-function _initScrollShadow() {
+function _initScrollHeader() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    window.addEventListener('scroll', () => {
-        navbar.style.boxShadow = window.scrollY > 50
-            ? '0 8px 20px rgba(0,0,0,0.1)'
-            : 'var(--shadow-sm)';
-    });
+    const handleScroll = () => {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check on load
 }

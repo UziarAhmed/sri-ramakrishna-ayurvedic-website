@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Hero Section — Full-Bleed Cinematic Background (Reference Design)
-   Full-width hospital building background image with a subtle cinematic tint,
-   elegant typography, and high-contrast readable elements.
+   Hero Section — Unified Full Canvas from Header to Trust Badges
+   The hospital image background extends from the top navigation bar
+   all the way down through the hero content and trust badges.
    ========================================================================== */
 
 .hero-section {
@@ -12,24 +12,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFFFFF;
-    padding: 5rem 0 0;
+    padding-top: calc(72px + 3rem);
+    padding-bottom: 0;
     overflow: hidden;
-    min-height: 600px;
+    min-height: 640px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
 
-/* ---- Subtle Cinematic Dark Overlay (Reveals Full Building Across Section) ---- */
+/* ---- Full Canvas Cinematic Overlay ---- */
 .hero-background-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(5, 22, 13, 0.50) 0%,
-        rgba(6, 26, 16, 0.55) 50%,
-        rgba(4, 18, 10, 0.68) 100%
+        rgba(4, 18, 10, 0.45) 0%,
+        rgba(5, 22, 13, 0.52) 40%,
+        rgba(4, 18, 10, 0.65) 100%
     );
     z-index: 1;
 }
@@ -161,11 +162,11 @@
     color: var(--gold-accent);
 }
 
-/* ---- Trust Badges Bar (Bottom of Hero) ---- */
+/* ---- Trust Badges Bar (Integrated into Bottom of Hero Canvas) ---- */
 .trust-badges-bar {
     position: relative;
     z-index: 2;
-    background: rgba(4, 18, 10, 0.88);
+    background: rgba(4, 18, 10, 0.75);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
