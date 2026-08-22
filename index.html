@@ -343,96 +343,106 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="doctors-grid">
-                <!-- Doctor Card 1 -->
-                <div class="doctor-card">
-                    <div class="doctor-photo-wrapper">
-                        <img src="assets/images/doc-dr-lavanyalaxmi.jpeg" alt="Dr. Lavanyalaxmi MD Panchakarma Ayurvedic Doctor" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
-                    </div>
-                    <div class="doctor-info">
-                        <div>
-                            <h3 class="doctor-name">Dr. Lavanyalaxmi</h3>
-                            <span class="doctor-degree">MD PANCHAKARMA</span>
-                            <p class="doctor-specialty">Pain, Stroke & Weight Management Expert</p>
-                            <div class="doctor-exp-badge">Panchakarma Specialist</div>
+            <div class="doctors-carousel-wrapper">
+                <button class="carousel-nav prev-btn" id="doctorsPrev" aria-label="Previous doctor">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="doctors-grid" id="doctorsGrid">
+                    <!-- Doctor Card 1 -->
+                    <div class="doctor-card">
+                        <div class="doctor-photo-wrapper">
+                            <img src="assets/images/doc-dr-lavanyalaxmi.jpeg" alt="Dr. Lavanyalaxmi MD Panchakarma Ayurvedic Doctor" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
                         </div>
-                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Lavanyalaxmi')" aria-label="Consult Dr. Lavanyalaxmi on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
-                        </button>
+                        <div class="doctor-info">
+                            <div>
+                                <h3 class="doctor-name">Dr. Lavanyalaxmi</h3>
+                                <span class="doctor-degree">MD PANCHAKARMA</span>
+                                <p class="doctor-specialty">Pain, Stroke & Weight Management Expert</p>
+                                <div class="doctor-exp-badge">Panchakarma Specialist</div>
+                            </div>
+                            <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Lavanyalaxmi')" aria-label="Consult Dr. Lavanyalaxmi on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Doctor Card 2 -->
+                    <div class="doctor-card">
+                        <div class="doctor-photo-wrapper">
+                            <img src="assets/images/doc-dr-balasubrahmanya.jpeg" alt="Dr. Balasubrahmanya K MD Ayurveda Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
+                        </div>
+                        <div class="doctor-info">
+                            <div>
+                                <h3 class="doctor-name">Dr. Balasubrahmanya K</h3>
+                                <span class="doctor-degree">MD (AYU)</span>
+                                <p class="doctor-specialty">Piles & Nasal Polypse Expert</p>
+                                <div class="doctor-exp-badge">Ayurveda Specialist</div>
+                            </div>
+                            <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Balasubrahmanya K')" aria-label="Consult Dr. Balasubrahmanya K on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Doctor Card 3 -->
+                    <div class="doctor-card">
+                        <div class="doctor-photo-wrapper">
+                            <img src="assets/images/doc-dr-sujala.jpeg" alt="Dr. Sujala MD Ayurveda Gynaecology Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
+                        </div>
+                        <div class="doctor-info">
+                            <div>
+                                <h3 class="doctor-name">Dr. Sujala</h3>
+                                <span class="doctor-degree">MD (AYU)</span>
+                                <p class="doctor-specialty">Infertility & PCOD Expert</p>
+                                <div class="doctor-exp-badge">Gynaecology Specialist</div>
+                            </div>
+                            <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Sujala')" aria-label="Consult Dr. Sujala on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Doctor Card 4 -->
+                    <div class="doctor-card">
+                        <div class="doctor-photo-wrapper">
+                            <img src="assets/images/doc-dr-sowmya.jpeg" alt="Dr. Sowmya Acupuncture and Naturopathy Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
+                        </div>
+                        <div class="doctor-info">
+                            <div>
+                                <h3 class="doctor-name">Dr. Sowmya</h3>
+                                <span class="doctor-degree">Acupuncture & Naturopathy</span>
+                                <p class="doctor-specialty">Acupuncture & Naturopathy Expert</p>
+                                <div class="doctor-exp-badge">Naturopathy Specialist</div>
+                            </div>
+                            <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Sowmya')" aria-label="Consult Dr. Sowmya on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Doctor Card 5 -->
+                    <div class="doctor-card">
+                        <div class="doctor-photo-wrapper">
+                            <img src="assets/images/doc-pratham-physio.jpeg" alt="Pratham Physiotherapy and Physical Rehabilitation Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
+                        </div>
+                        <div class="doctor-info">
+                            <div>
+                                <h3 class="doctor-name">Pratham</h3>
+                                <span class="doctor-degree">Physiotherapist</span>
+                                <p class="doctor-specialty">Physical Rehab & Mobility Specialist</p>
+                                <div class="doctor-exp-badge">Physiotherapy Specialist</div>
+                            </div>
+                            <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Pratham (Physiotherapist)')" aria-label="Consult Pratham on WhatsApp">
+                                <i class="fab fa-whatsapp"></i> Consult on WhatsApp
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Doctor Card 2 -->
-                <div class="doctor-card">
-                    <div class="doctor-photo-wrapper">
-                        <img src="assets/images/doc-dr-balasubrahmanya.jpeg" alt="Dr. Balasubrahmanya K MD Ayurveda Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
-                    </div>
-                    <div class="doctor-info">
-                        <div>
-                            <h3 class="doctor-name">Dr. Balasubrahmanya K</h3>
-                            <span class="doctor-degree">MD (AYU)</span>
-                            <p class="doctor-specialty">Piles & Nasal Polypse Expert</p>
-                            <div class="doctor-exp-badge">Ayurveda Specialist</div>
-                        </div>
-                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Balasubrahmanya K')" aria-label="Consult Dr. Balasubrahmanya K on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Doctor Card 3 -->
-                <div class="doctor-card">
-                    <div class="doctor-photo-wrapper">
-                        <img src="assets/images/doc-dr-sujala.jpeg" alt="Dr. Sujala MD Ayurveda Gynaecology Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
-                    </div>
-                    <div class="doctor-info">
-                        <div>
-                            <h3 class="doctor-name">Dr. Sujala</h3>
-                            <span class="doctor-degree">MD (AYU)</span>
-                            <p class="doctor-specialty">Infertility & PCOD Expert</p>
-                            <div class="doctor-exp-badge">Gynaecology Specialist</div>
-                        </div>
-                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Sujala')" aria-label="Consult Dr. Sujala on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Doctor Card 4 -->
-                <div class="doctor-card">
-                    <div class="doctor-photo-wrapper">
-                        <img src="assets/images/doc-dr-sowmya.jpeg" alt="Dr. Sowmya Acupuncture and Naturopathy Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
-                    </div>
-                    <div class="doctor-info">
-                        <div>
-                            <h3 class="doctor-name">Dr. Sowmya</h3>
-                            <span class="doctor-degree">Acupuncture & Naturopathy</span>
-                            <p class="doctor-specialty">Acupuncture & Naturopathy Expert</p>
-                            <div class="doctor-exp-badge">Naturopathy Specialist</div>
-                        </div>
-                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Dr. Sowmya')" aria-label="Consult Dr. Sowmya on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Doctor Card 5 -->
-                <div class="doctor-card">
-                    <div class="doctor-photo-wrapper">
-                        <img src="assets/images/doc-pratham-physio.jpeg" alt="Pratham Physiotherapy and Physical Rehabilitation Specialist" class="doctor-img" width="300" height="220" loading="lazy" decoding="async">
-                    </div>
-                    <div class="doctor-info">
-                        <div>
-                            <h3 class="doctor-name">Pratham</h3>
-                            <span class="doctor-degree">Physiotherapist</span>
-                            <p class="doctor-specialty">Physical Rehab & Mobility Specialist</p>
-                            <div class="doctor-exp-badge">Physiotherapy Specialist</div>
-                        </div>
-                        <button class="btn btn-whatsapp-sm" onclick="openBookingModal('Pratham (Physiotherapist)')" aria-label="Consult Pratham on WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Consult on WhatsApp
-                        </button>
-                    </div>
-                </div>
+                <button class="carousel-nav next-btn" id="doctorsNext" aria-label="Next doctor">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>

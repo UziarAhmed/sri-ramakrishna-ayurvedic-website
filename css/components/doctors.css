@@ -1,16 +1,36 @@
 /* ==========================================================================
-   Meet Our Doctors Section
-   5-column grid of doctor cards with photo, name, degree, specialty,
-   experience badge, and a WhatsApp consultation CTA button.
+   Meet Our Doctors Section — Horizontal Carousel
+   Horizontally scrollable carousel of doctor cards with photo, name, degree,
+   specialty, experience badge, WhatsApp consultation CTA button, and prev/next nav.
    ========================================================================== */
 
+.doctors-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .doctors-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.2rem;
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.75rem 0.3rem 1.5rem;
+    scrollbar-width: none;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.doctors-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .doctor-card {
+    scroll-snap-align: start;
+    flex: 0 0 calc((100% - 4 * 1.25rem) / 5);
+    min-width: 225px;
     background-color: var(--bg-white);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -20,7 +40,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
 }
 
 .doctor-card:hover {
@@ -32,6 +52,7 @@
 /* ---- Doctor Portrait ---- */
 .doctor-photo-wrapper {
     height: 220px;
+    width: 100%;
     overflow: hidden;
     background-color: #F1F5F9;
     position: relative;
@@ -57,6 +78,14 @@
     align-items: center;
     flex-grow: 1;
     justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.doctor-info > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .doctor-name {
