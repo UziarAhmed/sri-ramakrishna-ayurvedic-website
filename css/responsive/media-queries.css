@@ -27,9 +27,8 @@
     .location-badge {
         justify-content: center;
     }
-    .hero-image-wrapper {
-        max-width: 440px;
-        margin: 0 auto;
+    .hero-container {
+        padding-bottom: 2.2rem;
     }
 
     /* Trust Badges */
@@ -191,36 +190,11 @@
 
     /* Hero */
     .hero-section {
-        padding: 2rem 0 0;
+        padding: 3rem 0 0;
+        min-height: 480px;
     }
-    .hero-title {
-        font-size: clamp(1.8rem, 5.5vw, 2.2rem);
-    }
-    .hero-description {
-        font-size: 0.95rem;
-        margin-bottom: 1.4rem;
-    }
-    .hero-cta-group {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-    .hero-cta-group .btn {
-        width: 100%;
-        max-width: 320px;
-    }
-    .hero-image-wrapper {
-        max-width: 360px;
-    }
-    .hero-img {
-        height: 240px;
-    }
-    .hospital-name-tag {
-        font-size: 0.7rem;
-        padding: 0.45rem 0.75rem;
-        bottom: 0.75rem;
-        left: 0.75rem;
-        right: 0.75rem;
+    .hero-container {
+        padding-bottom: 2rem;
     }
 
     /* Trust Badges */
@@ -359,26 +333,22 @@
 
     /* Hero */
     .hero-section {
-        padding: 1.5rem 0 0;
+        padding: 2.2rem 0 0;
+        min-height: 440px;
     }
     .hero-title {
-        font-size: 1.7rem;
-        line-height: 1.2;
+        font-size: 1.65rem;
+        line-height: 1.22;
     }
     .hero-description {
         font-size: 0.88rem;
         margin-bottom: 1.2rem;
         line-height: 1.55;
     }
-    .hero-image-wrapper {
-        max-width: 300px;
-    }
-    .hero-img {
-        height: 200px;
-    }
-    .hospital-name-tag {
-        font-size: 0.62rem;
-        padding: 0.4rem 0.6rem;
+    .hero-hospital-badge {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.85rem;
+        margin-bottom: 1rem;
     }
 
     /* Trust Badges */

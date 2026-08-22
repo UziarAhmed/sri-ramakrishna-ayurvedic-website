@@ -1,116 +1,213 @@
 /* ==========================================================================
-   Hero Section
-   Split-layout hero matching the compact Vercel live site proportions.
+   Hero Section — Full-Width Background Image with Dark Emerald Overlay
    ========================================================================== */
 
 .hero-section {
-    background: linear-gradient(135deg, #FAF8F5 0%, #EBF4EE 100%);
-    padding: 3rem 0 0;
     position: relative;
+    background: #082616 url('assets/images/hospital-building-hero.jpeg') center center / cover no-repeat;
+    color: #FFFFFF;
+    padding: 4.5rem 0 0;
     overflow: hidden;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ---- Dark Emerald Legibility Overlay ---- */
+.hero-background-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(6, 30, 17, 0.93) 0%,
+        rgba(10, 48, 27, 0.86) 50%,
+        rgba(6, 30, 17, 0.80) 100%
+    );
+    z-index: 1;
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items: center;
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 2.8rem;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ---- Top Hospital Badge ---- */
+.hero-hospital-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 0.45rem 1.15rem;
+    border-radius: var(--radius-full);
+    color: var(--gold-accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+}
+
+.hero-hospital-badge i {
+    color: var(--gold-accent);
+    font-size: 0.95rem;
+}
+
+/* ---- Hero Typography ---- */
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 2.8vw, 2.6rem);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 700;
-    color: var(--primary-dark-green);
-    line-height: 1.18;
-    margin-bottom: 1rem;
-    letter-spacing: -0.3px;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle-green {
-    color: var(--accent-green);
+    background: linear-gradient(90deg, #6EE7B7, #FDE047);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .hero-description {
-    font-size: clamp(0.92rem, 1.1vw, 1rem);
-    color: var(--text-muted);
-    margin-bottom: 1.8rem;
-    max-width: 500px;
-    line-height: 1.65;
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    line-height: 1.7;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
+.hero-description strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* ---- CTA Buttons ---- */
 .hero-cta-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.9rem;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.btn-whatsapp-hero {
+    background-color: var(--whatsapp-color);
+    color: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp-hero:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+}
+
+.btn-hero-video {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-hero-video:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    transform: translateY(-2px);
 }
 
 .location-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     font-weight: 600;
-    color: var(--primary-dark-green);
-    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.92rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .location-badge i {
-    color: var(--primary-green);
+    color: var(--gold-accent);
 }
 
-/* ---- Hero Image Frame ---- */
-.hero-image-wrapper {
+/* ---- Trust Badges Bar (Bottom of Hero) ---- */
+.trust-badges-bar {
     position: relative;
-    max-width: 460px;
-    margin-left: auto;
+    z-index: 2;
+    background: rgba(4, 20, 11, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.8rem 0;
+    margin-top: auto;
     width: 100%;
 }
 
-.image-frame-border {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 3px solid #FFFFFF;
-    aspect-ratio: 4 / 3;
-    background-color: #E2E8F0;
+.trust-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.image-overlay-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(14, 59, 35, 0.75) 0%, rgba(14, 59, 35, 0.1) 50%, transparent 80%);
-}
-
-.hospital-name-tag {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 0.6rem 0.9rem;
-    border-radius: var(--radius-md);
+.trust-item {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    color: var(--primary-dark-green);
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    gap: 0.85rem;
 }
 
-.hospital-name-tag i {
-    color: var(--primary-green);
-    font-size: 1rem;
+.trust-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--gold-accent);
+    flex-shrink: 0;
+}
+
+.trust-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust-number,
+.trust-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.trust-label {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.2;
 }
