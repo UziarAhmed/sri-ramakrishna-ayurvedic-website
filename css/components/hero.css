@@ -1,47 +1,66 @@
 /* ==========================================================================
-   Hero Section — Unified Full Canvas from Header to Trust Badges
-   The hospital image background extends from the top navigation bar
-   all the way down through the hero content and trust badges.
+   Hero Section — Full-Bleed Cinematic Hospital Background
+   Header is fixed/transparent on top, so hero adds padding-top = header height.
+   Trust badges are seamlessly integrated as part of the same canvas.
    ========================================================================== */
 
-.hero-section {
-    position: relative;
-    background-color: #0A2415;
-    background-image: url('../../assets/images/hospital-building-hero.jpeg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #FFFFFF;
-    padding-top: calc(72px + 3rem);
-    padding-bottom: 0;
-    overflow: hidden;
-    min-height: 640px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+/* ---- Animation keyframes ---- */
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---- Full Canvas Cinematic Overlay ---- */
+/* ---- Hero wrapper ---- */
+.hero-section {
+    position: relative;
+    background-color: #0a2416;
+    /* inline style provides background-image so the path is root-relative */
+    background-position: center 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    /* push content below fixed header (72px) + breathing room */
+    padding-top: calc(72px + 3.5rem);
+    padding-bottom: 0;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ---- Layered cinematic overlay ---- */
 .hero-background-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(4, 18, 10, 0.45) 0%,
-        rgba(5, 22, 13, 0.52) 40%,
-        rgba(4, 18, 10, 0.65) 100%
-    );
+    /* Strong vignette at top (behind nav) and bottom (at trust bar).
+       Left-to-right: slightly heavier on left so text is always readable. */
+    background:
+        linear-gradient(
+            to right,
+            rgba(4, 16, 10, 0.72) 0%,
+            rgba(4, 16, 10, 0.52) 55%,
+            rgba(4, 16, 10, 0.28) 100%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(4, 16, 10, 0.55) 0%,
+            rgba(4, 16, 10, 0.18) 35%,
+            rgba(4, 16, 10, 0.30) 70%,
+            rgba(4, 16, 10, 0.75) 100%
+        );
     z-index: 1;
 }
 
+/* ---- Hero content area ---- */
 .hero-container {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1.5rem 3.5rem;
+    padding: 0 2rem 3rem;
 }
 
 .hero-content {
@@ -49,175 +68,183 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    max-width: 680px;
+    max-width: 620px;
+    animation: heroFadeUp 0.8s ease both;
 }
 
-/* ---- Top Hospital Badge ---- */
-.hero-hospital-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.45rem 1.2rem;
-    border-radius: var(--radius-full);
-    color: var(--gold-accent);
-    font-size: 0.84rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-hospital-badge i {
-    color: var(--gold-accent);
-    font-size: 0.95rem;
-}
-
-/* ---- Hero Typography ---- */
+/* ---- Typography ---- */
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-size: clamp(2rem, 3.6vw, 3.2rem);
     font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.14;
-    margin-bottom: 1.3rem;
-    letter-spacing: -0.5px;
-    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 5px rgba(0, 0, 0, 0.9);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.3px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
 }
 
 .hero-subtitle-green {
-    color: #FFFFFF;
-    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 5px rgba(0, 0, 0, 0.9);
+    /* Retain white to stay readable over variable photo areas */
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
 }
 
 .hero-description {
-    font-size: clamp(1rem, 1.25vw, 1.15rem);
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 2.2rem;
-    max-width: 580px;
-    line-height: 1.7;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+    font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+    color: rgba(255, 255, 255, 0.93);
+    margin-bottom: 1.8rem;
+    max-width: 540px;
+    line-height: 1.68;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-description strong {
-    color: #FFFFFF;
+    color: #fff;
     font-weight: 700;
 }
 
-/* ---- CTA Buttons ---- */
+/* ---- CTA group ---- */
 .hero-cta-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.8rem;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
 }
 
 .btn-whatsapp-hero {
     background-color: var(--whatsapp-color);
-    color: #FFFFFF;
+    color: #fff;
     font-weight: 700;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-whatsapp-hero:hover {
     background-color: var(--whatsapp-hover);
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
 }
 
 .btn-hero-video {
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-hero-video:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: #FFFFFF;
-    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #fff;
     transform: translateY(-2px);
 }
 
+/* ---- Location badge ---- */
 .location-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 0.92rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+    gap: 0.45rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.85rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+    animation: heroFadeUp 0.9s 0.1s ease both;
 }
 
 .location-badge i {
-    color: var(--gold-accent);
+    color: var(--gold-accent, #E5B549);
+    flex-shrink: 0;
 }
 
-/* ---- Trust Badges Bar (Integrated into Bottom of Hero Canvas) ---- */
+/* ==========================================================================
+   Trust Badges Bar — Glassmorphic footer of the hero canvas
+   ========================================================================== */
+
 .trust-badges-bar {
     position: relative;
     z-index: 2;
-    background: rgba(4, 18, 10, 0.75);
+    /* Frosted dark strip so badges are always readable */
+    background: rgba(4, 14, 9, 0.68);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 1.8rem 0;
-    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 1.25rem 0;
     width: 100%;
+    /* Sit at bottom of flex hero */
+    margin-top: auto;
 }
 
+/* Desktop: single row, evenly distributed */
 .trust-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
 }
 
 .trust-item {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 0.65rem;
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.10);
+    transition: opacity 0.2s ease;
+}
+
+.trust-item:last-child {
+    border-right: none;
+}
+
+.trust-item:hover {
+    opacity: 0.88;
 }
 
 .trust-icon {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(229, 181, 73, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    color: var(--gold-accent);
+    font-size: 1rem;
+    color: var(--gold-accent, #E5B549);
     flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.trust-item:hover .trust-icon {
+    background: rgba(229, 181, 73, 0.18);
+    transform: scale(1.08);
 }
 
 .trust-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .trust-number,
 .trust-title {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #fff;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .trust-label {
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.70rem;
+    color: rgba(255, 255, 255, 0.78);
     line-height: 1.2;
+    white-space: nowrap;
 }
