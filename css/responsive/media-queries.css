@@ -87,11 +87,8 @@
 
     /* Footer */
     .footer-container {
-        grid-template-columns: 1.5fr 1fr 1fr;
-    }
-    .footer-col:nth-child(4),
-    .footer-col:nth-child(5) {
-        grid-column: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
     }
 
     /* Nav */
@@ -319,11 +316,8 @@
 
     /* Footer */
     .footer-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    .footer-brand-col {
-        grid-column: 1 / -1;
     }
 
     /* Modals */

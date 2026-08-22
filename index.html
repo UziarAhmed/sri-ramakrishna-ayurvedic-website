@@ -869,10 +869,11 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-col footer-brand-col">
+            <!-- Brand Column -->
+            <div class="footer-brand-col">
                 <a href="#home" class="footer-brand-logo" aria-label="Sri Ramakrishna Ayurvedic Hospital Footer Home">
                     <div class="footer-logo-icon">
-                        <img src="assets/images/logo.png" alt="Sri Ramakrishna Hospital Logo" class="logo-img" width="44" height="44">
+                        <img src="assets/images/logo.png" alt="Sri Ramakrishna Hospital Logo" class="logo-img" width="46" height="46">
                     </div>
                     <div>
                         <span class="f-name">SRI RAMAKRISHNA</span><br>
@@ -882,47 +883,44 @@
                 <p class="footer-desc">
                     Healing the root cause. Restoring health naturally. Guided by authentic Ayurveda, driven by compassion in Kundapura, Karnataka.
                 </p>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#treatments">Treatments</a></li>
-                    <li><a href="#doctors">Doctors</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Our Services</h4>
-                <ul class="footer-links">
-                    <li><a href="#treatments" onclick="selectTreatment('Pain Management')">Pain Management</a></li>
-                    <li><a href="#treatments" onclick="selectTreatment('Stroke Rehabilitation')">Stroke Rehabilitation</a></li>
-                    <li><a href="#treatments" onclick="selectTreatment('Panchakarma')">Panchakarma Detox</a></li>
-                    <li><a href="#treatments" onclick="selectTreatment('Neurological Disorders')">Neurological Care</a></li>
-                    <li><a href="#treatments" onclick="selectTreatment('Lifestyle Disorders')">Lifestyle Disorders</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Important Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Connect With Us</h4>
-                <div class="footer-social-icons">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Sri Ramakrishna Hospital on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Sri Ramakrishna Hospital on Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Watch Sri Ramakrishna Hospital on YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-social-wrapper">
+                    <span class="footer-social-label">Follow Us:</span>
+                    <div class="footer-social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Sri Ramakrishna Hospital on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Sri Ramakrishna Hospital on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Watch Sri Ramakrishna Hospital on YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Contact Us Column -->
+            <div class="footer-contact-col">
+                <h4 class="footer-heading">Contact Us</h4>
+                <div class="footer-contact-list">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Shastri Circle, Court Road, Kundapura – 576201, Udupi District, Karnataka</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <span>
+                            <a href="tel:+919731689266">+91 97316 89266</a> &nbsp;|&nbsp; 
+                            <a href="tel:+919108777446">+91 91087 77446</a>
+                        </span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span><a href="mailto:info@srkayurveda.com">info@srkayurveda.com</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <span>Mon – Sun: 8:00 AM – 8:00 PM (OPD & Inpatient Care)</span>
+                    </div>
+                </div>
+                <button class="footer-cta-btn" onclick="openBookingModal()" aria-label="Book WhatsApp consultation from footer">
+                    <i class="fab fa-whatsapp"></i> Book WhatsApp Consultation
+                </button>
             </div>
         </div>
 

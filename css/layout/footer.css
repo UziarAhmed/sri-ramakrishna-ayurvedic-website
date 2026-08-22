@@ -1,117 +1,195 @@
 /* ==========================================================================
    Site Footer
-   Dark green multi-column footer with brand logo, links, social icons,
-   and a copyright bottom bar.
+   Clean 2-column layout: Hospital Brand & Summary on left,
+   Complete Contact Details & WhatsApp Consultation on right.
    ========================================================================== */
 
 .site-footer {
     background-color: #0A2E1B;
     color: #FFFFFF;
-    padding: 4rem 0 0;
+    padding: 3.5rem 0 0;
 }
 
 .footer-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
 }
 
-/* ---- Footer Brand Logo Area ---- */
-.footer-logo {
+/* ---- Footer Brand Column ---- */
+.footer-brand-col {
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1.2rem;
-}
-
-.footer-logo-icon {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 .footer-brand-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 1rem;
 }
 
-.logo-icon-sm {
-    width: 40px;
-    height: 40px;
-    color: var(--gold-accent);
+.footer-logo-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+}
+
+.footer-logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .f-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    line-height: 1.1;
 }
 
 .f-sub {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
     color: var(--gold-accent);
 }
 
 .footer-desc {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+    max-width: 480px;
 }
 
-/* ---- Footer Link Columns ---- */
-.footer-heading {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--gold-accent);
-    margin-bottom: 1.2rem;
-}
-
-.footer-links {
+/* ---- Social Icons in Brand Col ---- */
+.footer-social-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
 }
 
-.footer-links a {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-links a:hover {
+.footer-social-label {
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--gold-accent);
-    padding-left: 4px;
+    letter-spacing: 0.5px;
 }
 
-/* ---- Social Icons ---- */
 .footer-social-icons {
     display: flex;
-    gap: 0.8rem;
+    gap: 0.75rem;
 }
 
 .footer-social-icons a {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFF;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
 .footer-social-icons a:hover {
     background: var(--gold-accent);
     color: var(--primary-dark-green);
+    transform: translateY(-2px);
+}
+
+/* ---- Footer Contact Column ---- */
+.footer-contact-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    margin-bottom: 1.4rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--gold-accent);
+}
+
+.footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.5;
+}
+
+.footer-contact-item i {
+    color: var(--gold-accent);
+    font-size: 1.05rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-contact-item a {
+    color: rgba(255, 255, 255, 0.88);
+    transition: var(--transition);
+}
+
+.footer-contact-item a:hover {
+    color: var(--gold-accent);
+}
+
+.footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--whatsapp-color);
+    color: #FFFFFF;
+    padding: 0.65rem 1.4rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+.footer-cta-btn:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(18, 140, 126, 0.35);
 }
 
 /* ---- Footer Bottom Bar ---- */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem 0;
+    padding: 1.4rem 0;
     text-align: center;
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
